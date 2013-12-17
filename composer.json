@@ -1,0 +1,34 @@
+{
+    "name": "bbc-knowlearn/laravel-xslt-view",
+    "description": "Allows you to render XML documents using XSLT in Laravel",
+    "license": "Apache",
+    "authors": [
+        {
+            "name": "BBC Knowledge and Learning",
+            "email": "unified-place-developers@lists.forge.bbc.co.uk"
+        }
+    ],
+    "require": {
+        "laravel/framework": "4.0.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "phing/phing": "~2.6.1",
+        "squizlabs/php_codesniffer": "1.4.*",
+        "bbc-fm-nk-core-eng/codesniffer-rules": "0.2.1"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:bbc-fm-nk-core-eng/php-codesniffer-rules.git"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "BBC\\": "src/"
+        }
+    },
+    "config": {
+        "github-domains": []
+    }
+}

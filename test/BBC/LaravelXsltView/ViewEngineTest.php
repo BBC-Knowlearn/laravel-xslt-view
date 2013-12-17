@@ -9,6 +9,8 @@ class ViewEngineTest extends \PHPUnit_Framework_TestCase
     private $_mockProcessor;
     private $_testXslFile;
 
+    const SAMPLE_XSL_CONTENTS = 'Hello World';
+
     public function setUp() {
         parent::setUp();
         $this->_mockProcessor = $this->getMockBuilder('XSLTProcessor')
@@ -33,7 +35,7 @@ class ViewEngineTest extends \PHPUnit_Framework_TestCase
                 $this->returnCallback(
                     function(\DOMDocument $document) {
                         \PHPUnit_Framework_Assert::assertEquals(
-                            'Hello World',
+                            self::SAMPLE_XSL_CONTENTS,
                             (string) simplexml_import_dom($document)
                         );
                     }

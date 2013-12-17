@@ -2,7 +2,7 @@
 <project name="laravel-xslt-view" default="dist">
 
     <target name="test">
-        <phpunit haltonfailure="true" printsummary="true">
+        <phpunit haltonfailure="true" haltonerror="true" printsummary="true">
             <batchtest>
                 <fileset dir="test">
                     <include name="**/*Test.php"/>

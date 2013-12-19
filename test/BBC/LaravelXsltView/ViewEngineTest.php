@@ -88,12 +88,32 @@ class ViewEngineTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($this->renderSimpleDocumentAndTemplate(), $sentinel);
     }
 
+    /** @test */
+    public function testFullTreeIsTransformed() {
+        $this->_mockProcessor->expects($this->once())
+            ->method('transformToXML')
+            ->will(
+                $this->returnCallback(
+                    function(\DOMDocument $document) {
+                        \PHPUnit_Framework_Assert::assertEquals(
+                            'test',
+                            (string) simplexml_import_dom($document)->child
+                        );
+                    }
+                )
+            );
+
+        $this->renderSimpleDocumentAndTemplate('<body><child>test</child></body>');
+    }
+
     /**
+     * @param string $xml
+     *
      * @return string
      */
-    private function renderSimpleDocumentAndTemplate() {
+    private function renderSimpleDocumentAndTemplate($xml='<body/>') {
         return $this->_engine->get(
-            $this->_testXslFile, array('document' => simplexml_load_string('<body/>'))
+            $this->_testXslFile, array('document' => simplexml_load_string($xml))
         );
     }
 }

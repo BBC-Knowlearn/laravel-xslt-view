@@ -38,7 +38,9 @@ class ViewEngine implements \Illuminate\View\Engines\EngineInterface
 
     private function convertSimpleXmlToDomDocument($simpleXmlElement) {
         $document = new \DOMDocument();
-        $document->appendChild($document->importNode(dom_import_simplexml($simpleXmlElement)));
+        $document->appendChild(
+            $document->importNode(dom_import_simplexml($simpleXmlElement), true)
+        );
         return $document;
     }
 }

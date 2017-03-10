@@ -15,7 +15,7 @@
         "phpunit/phpunit": "3.7.*",
         "phing/phing": "~2.6.1",
         "squizlabs/php_codesniffer": "1.4.*",
-        "bbc/kandl-php-codesniffer-rules": "0.2.1"
+        "bbc/kandl-php-codesniffer-rules": "0.2.2"
     },
     "repositories": [
         {

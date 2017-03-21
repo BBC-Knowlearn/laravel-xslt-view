@@ -9,7 +9,7 @@
                 </fileset>
             </batchtest>
         </phpunit>
-        <phpcodesniffer haltonerror="true" standard="vendor/bbc-fm-nk-core-eng/codesniffer-rules/BBC/ruleset.xml" file="src" allowedFileExtensions="php"/>
+        <phpcodesniffer haltonerror="true" standard="vendor/bbc/kandl-php-codesniffer-rules/BBC/ruleset.xml" file="src" allowedFileExtensions="php"/>
     </target>
 
     <target name="dist" depends="test" />
